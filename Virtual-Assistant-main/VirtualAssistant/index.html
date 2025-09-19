@@ -1,18 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xavier,My virtual assistant</title>
-  <link rel="shortcut icon" href="logo.jpg" type="image/x-icon">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Xavier AI — Smart Assistant</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <img src="logo3.jpg" alt="logo" id="logo">
-    <h1>I'm <span id="name">Xavier</span>,Your <span id="va">Virtual Assistant</span></h1>
-    <img src="voice.gif" alt="voice" id="voice">
-    <button id="btn"><img src="mic.svg" alt="mic"><span id="content"> Click here for talk to me</span> </button>
+  <div class="wrapper">
+    <aside class="left">
+      <div class="brand">
+        <div class="ai-circle" id="aiCircle"><div class="inner">X</div></div>
+        <h1>Xavier <span>AI</span></h1>
+        <p id="status">Hello! I'm ready to help</p>
+      </div>
 
-    <script src="script.js"></script>
+      <div class="controls">
+        <button id="micBtn" class="mic-btn">🎤 <span>Speak</span></button>
+        <input id="textInput" type="text" placeholder="Or type here and press Enter..." />
+        <div class="quick-menu">
+          <button data-cmd="time">⏰</button>
+          <button data-cmd="date">📅</button>
+          <button data-cmd="weather">🌤️</button>
+          <button data-cmd="youtube">📺</button>
+          <button data-cmd="google">🔍</button>
+          <button data-cmd="joke">😂</button>
+        </div>
+      </div>
+
+      <div class="todo-panel">
+        <h3>To-Do</h3>
+        <div class="todo-input">
+          <input id="todoInput" placeholder="Add new task (or say: add task ...)" />
+          <button id="addTodoBtn">Add</button>
+        </div>
+        <ul id="todoList"></ul>
+        <div class="todo-actions">
+          <button id="clearTodos">Clear</button>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <section class="chat">
+        <div id="chatBox" class="chat-box" aria-live="polite"></div>
+        <div class="chat-input">
+          <input id="chatInput" placeholder="Write message..." />
+          <button id="sendBtn">Send</button>
+        </div>
+      </section>
+
+      <aside class="right">
+        <div class="history">
+          <h4>Command History</h4>
+          <ul id="historyList"></ul>
+        </div>
+        <div class="about">
+          <h4>Features</h4>
+          <ul>
+            <li>Voice & Text chat</li>
+            <li>To-Do management (add, remove, list)</li>
+            <li>Open websites, time/date, jokes</li>
+            <li>Weather placeholder (add API key to enable)</li>
+            <li>Extendable: Backend AI (ChatGPT) integration</li>
+          </ul>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
